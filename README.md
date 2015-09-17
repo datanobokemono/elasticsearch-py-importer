@@ -17,3 +17,4 @@ Minimum setup to import CSV file enter following command to your CLI
 There are also following parameters in CSV import
 * ```-bs *BULK_SIZE*``` Set bulk size. By default this property is set to 1000
 * ```-p``` Log progress every *BULK_SIZE* rows. Also you can track number of CSV rows read like this ```-p *PROGRESS_STEP*```
+* ```-d *JSON_DATA*``` Default values for empty columns. The structure of JSON file is ```{"column_name" : "defalut_value"}```

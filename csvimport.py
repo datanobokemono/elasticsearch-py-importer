@@ -2,6 +2,8 @@
 # v 0.1
 import datetime
 import csv
+import json
+import sys
 import bokuno_console
 from elasticsearch import Elasticsearch
 from elasticsearch import helpers
@@ -53,6 +55,10 @@ if filename and index_name and type_name and id_name:
 	# Log execution time to optimize it
 	time_started = datetime.datetime.now()
 
+	# Initializing default values for empty row cells from json object in -d parameter
+	default_values = {}
+	if "-d" in args:
+		default_values = json.loads(args["-d"])
 
 	# Log beginning of parsing
 	print("Parsing file %s" % filename)
@@ -72,6 +78,12 @@ if filename and index_name and type_name and id_name:
 			# Checking if row has id value
 			if row[id_name]:
 				id_value = row[id_name]
+
+				# Setting default values
+				if "-d" in args:
+					for k in default_values:
+						if not row[k]:
+							row[k] = default_values[k]
 
 				# Collecting data as bulk action
 				action = {
