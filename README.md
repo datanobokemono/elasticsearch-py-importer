@@ -2,8 +2,7 @@
 Python file importer for elasticsearch. All imports are working with bulk
 
 ## Dependencies
-You have to install elasticsearch python client with [pip](https://pip.pypa.io/en/stable/installing/).
-
+You have to install elasticsearch python client with [https://pip.pypa.io/en/stable/installing/](pip).
 ```pip install elasticsearch```
 
 ## Supported formats
@@ -12,8 +11,7 @@ You have to install elasticsearch python client with [pip](https://pip.pypa.io/e
 - [ ] .SQL *(todo)*
 
 ### Importing .CSV files
-Minimum setup to import CSV file enter following command to your CLI:
-
+Minimum setup to import CSV file enter following command to your CLI
 ```python csvimport.py -i *INDEX_NAME* -t *TYPE_NAME* -id *CSV_ID_FIELD* -f *FILENAME*```
 
 There are also following parameters in CSV import
